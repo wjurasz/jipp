@@ -1,0 +1,10 @@
+//Napisz funkcję, która znajduje maksymalny i minimalny element w liście liczbowej.
+let rec findMax list minSoFar maxSoFar =
+        match list with
+        | Empty -> (minSoFar,maxSoFar)
+        | Node(Head,Tail) -> findMax Tail (min Head minSoFar) (max Head maxSoFar)
+
+let findMinMax list =
+    match list with
+    | Empty -> None
+    | Node (Head, Tail) -> Some (findMax Tail Head Head)
